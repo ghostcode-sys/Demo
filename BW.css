@@ -1,0 +1,56 @@
+body {
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+.container {
+  display: inline-block;
+  background-color: black;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.boxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 400px;
+  background-color: black;
+}
+.door {
+  width: 2px;
+  height: 10px;
+  background-color: white;
+  margin: 10px;
+  transform: skew(0, 0);
+  animation: showDoor 8s ease 0s 1 normal forwards;
+}
+
+@keyframes showDoor {
+  0% {
+    transform: skew(0deg, 0deg);
+    height: 10px;
+    width: 2px;
+  }
+  25% {
+    transform: skew(0deg, 0deg);
+    height: 100px;
+    width: 2px;
+  }
+  50% {
+    transform: skew(20deg, 20deg);
+    height: 100px;
+    width: 10px;
+  }
+  75%{
+    transform: skew(0deg, 0deg);
+    height: 100px;
+    width: 2px;
+  }
+  100%{
+    transform: skew(0deg, 0deg);
+    height: 0px;
+    width: 0px;
+  }
+}

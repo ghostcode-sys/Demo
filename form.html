@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="POST" id="myForm">
+      <label>Full name in Base 64</label>
+      <input name="b_name" type="text" />
+      <input name="name" type="text" />
+      <input name="b_reg_no" type="text" />
+      <input name="reg_no" type="text" />
+      <input name="b_email" type="text" />
+      <input name="email" type="text" />
+      <input onclick="myFunction()" type="button" value="submit" />
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const myFunction = () => {
+        // console.log("hello from function")
+        const ele = document.getElementById("myForm");
+        const formData = new FormData(ele);
+        const values = [...formData.entries()];
+        let data = {};
+        data.name = values[1][1];
+        data.reg_no = values[3][1];
+        data.email = values[5][1];
+        data.b_name = utf8_to_b64(values[0][1]);
+        data.b_reg_no = utf8_to_b64(values[2][1]);
+        data.b_email = utf8_to_b64(values[4][1]);
+        console.log(data);
+        // axios.post("https://71ad0790-092a-4d31-b781-33147c9f2c07.mock.pstmn.io", data).then( res => {
+        //     console.log(res)
+        // })
+        postData("https://bfhldevapigw.healthrx.co.in/bfl-api-challenge/challenge-entry",
+        data);
+      };
+
+      function utf8_to_b64(str) {
+        return window.btoa(unescape(encodeURIComponent(str)));
+      }
+      async function postData(url = "", data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, *cors, same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        //   credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          redirect: "follow", // manual, *follow, error
+          referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify(data), // body data type must match "Content-Type" header
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+      }
+    </script>
+  </body>
+</html>

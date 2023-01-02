@@ -1,0 +1,59 @@
+*{
+    padding:0;
+    margin:0;
+}
+.container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: rgb(67, 173, 206);
+}
+.textbox{
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    font-size: xxx-large;
+    color: rgb(67, 173, 206);
+    font-weight: 700;
+    text-align: center;
+}
+.textname{
+    text-shadow: none;
+    animation-name: showtext;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+span:nth-child(1){
+    animation-delay: 0.3s;
+}
+span:nth-child(2){
+    animation-delay: 0.6s;
+}
+span:nth-child(3){
+    animation-delay: 0.9s;
+}
+span:nth-child(4){
+    animation-delay: 1.2s;
+}
+span:nth-child(5){
+    animation-delay: 1.5s;
+}
+span:nth-child(6){
+    animation-delay: 1.8s;
+}
+span:nth-child(7){
+    animation-delay: 2.1s;
+}
+span:nth-child(8){
+    animation-delay: 2.4s;
+}
+
+@keyframes showtext {
+    0% {text-shadow: none; transform: translate(-100px, 0);}
+    100% {text-shadow: 2px 2px 2px rgb(20, 18, 18); transform: translate(0);}
+}

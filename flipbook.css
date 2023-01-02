@@ -1,0 +1,31 @@
+.body{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cover{
+    background-color: teal;
+    width: 20%;
+    height: 50%;
+    transform: rotateX(0deg) rotateY(0deg);
+    box-shadow: 4px 4px 5px 4px #404848;
+    transition: transform 2s;
+    transform-origin: center left;
+}
+.cover:hover{
+    transform: rotateY(180deg) rotateX(0deg);
+}
+.page{
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    z-index: -100;
+    padding:4px;
+    border: 2px solid teal;
+    box-sizing: border-box;
+}

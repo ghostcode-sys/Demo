@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%; /* 10px */
+      }
+
+      body {
+        background-color: #121112;
+        color: #fff;
+        font-family: sans-serif;
+      }
+
+      .title-wrapper {
+        margin: 10rem 3rem;
+      }
+
+      .title {
+        font-size: 10rem;
+        color: hsla(0, 0%, 100%, 0.08);
+        background-clip: text;
+        background-image: radial-gradient(
+          closest-side,
+          green 100%,
+          transparent 0
+        );
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 400px 400px;
+        transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="title-wrapper">
+      <h1 class="title">
+        Hello, <br />
+        I am <br />Prashant chandel
+      </h1>
+    </main>
+
+    <script>
+      const color = ["teal", "maroon", "royalblue", "pink", "white"];
+      var i = 0;
+      const spotlightSize = 400;
+      document,
+        addEventListener("mousedown", (event) => {
+          if (event.button === 0) {
+            const element = document.querySelector(".title");
+            element.style.backgroundImage =
+              "radial-gradient(closest-side," +
+              color[i] +
+              " 100%,transparent 0)";
+          }
+          i = (i + 1) % 5;
+        });
+
+      // moving pointer
+      document.addEventListener(
+        "mousemove",
+        function (event) {
+          if (window.event) {
+            // IE fix
+            event = window.event;
+          }
+          // Get the coordinates of the title
+          let titleRect = document
+            .querySelector(".title")
+            .getBoundingClientRect();
+
+          // Grab the mouse's X-position
+          let mouseX = event.clientX;
+
+          // Position spotlight x coordinate based on mouse x, center based on width of spotlight, take into account element x offset
+          let spotlightX = mouseX - spotlightSize / 2 - titleRect.left;
+
+          // Grab the mouse's Y position
+          let mouseY = event.clientY;
+
+          // Position spotlight y coordinate based on mouse y, center based on width of spotlight, take into account element y offset
+          let spotlightY = mouseY - spotlightSize / 2 - titleRect.top;
+
+          // Set x and y position of spotlight
+          const element = document.querySelector(".title");
+          element.style.backgroundPosition =
+            spotlightX + "px " + spotlightY + "px";
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

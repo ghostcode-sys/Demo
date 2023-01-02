@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="BW.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="boxContainer">
+        <span id="fName" class="NameText"></span>
+        <div class="door"></div>
+        <span id="sName"></span>
+      </div>
+    </div>
+    <script>
+        const firstName = () => {
+          var st = "";
+          var idx = 0
+        var timer = setInterval(() => {
+            const fArr = ["P", "R", "A", "S", "H", "A", "N", "T"];
+            st += fArr[idx]
+            idx++
+            if(idx > 7){
+                clearInterval(timer)
+            }
+            document.getElementById("fName").innerHTML = st;
+        }, 200)
+      };
+      const lastName = () => {
+        var st = "";
+          var idx = 0
+        var timer1 = setInterval(() => {
+            const lArr = ["L", "E", "D", "N", "A", "H", "C"];
+            st = lArr[idx] + st
+            idx++
+            if(idx > 6){
+                clearInterval(timer1)
+            }
+            document.getElementById("sName").innerHTML = st;
+        }, 200)
+        
+      };
+      const startTimer = () => {
+        firstName()
+        lastName()
+      };
+      window.setTimeout(startTimer, 2500);
+    </script>
+  </body>
+</html>

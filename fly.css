@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.leftslide, .upslide{
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.leftslide{
+    top:0;
+    right:0;
+    animation: slideleft 5s linear 0s 1 normal forwards;
+}
+.upslide{
+    top:0;
+    left:0;
+    animation: slideup 5s linear 0s 1 normal forwards;
+}
+
+@keyframes slideleft {
+    0% {width: 100%;}
+    100% {width: 0;}
+}
+
+@keyframes slideup {
+    0% {height: 100%;}
+    100% {height: 0;}
+}
+
+
+.planebox{
+    /* top:0vh;
+    left: -20vw; */
+    transform: rotate(90deg);
+    position: absolute;
+    width: 20vw;
+    height: 30vh;
+    animation: flypath 5.5s linear 0s 1 normal forwards;
+    transform: rotate(60deg);
+}
+
+@keyframes flypath{
+    0% {top: 90vh; left:-20vh}
+    100% {top:-30vh; left:100vw}
+    
+    
+}
+
+.plane{
+    width: 100%;
+    height: 100%;
+}

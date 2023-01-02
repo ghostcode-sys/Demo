@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* color: whitesmoke; */
+}
+.body {
+  box-sizing: border-box;
+  padding: 4px;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+.introduction {
+  margin: 20px auto 30px auto;
+  position: relative;
+  display: block;
+  width: 90vw;
+  height: 30px;
+  animation: top-box 3s linear 0s 1 normal forwards;
+}
+.introduction::before {
+  content: "";
+  text-align: center;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+  background: gray;
+  animation: top-left 5s linear 0s 1 normal forwards;
+}
+@keyframes top-left {
+  0% {
+    width: 0%;
+    height: 0%;
+    border-left-color: whitesmoke;
+    border-top-color: whitesmoke;
+    border-right-color: transparent;
+    border-bottom-color: whitesmoke;
+  }
+  25% {
+    width: 0%;
+    height: 100%;
+    border-left-color: whitesmoke;
+    border-top-color: whitesmoke;
+    border-right-color: transparent;
+    border-bottom-color: whitesmoke;
+    box-shadow: 4px 4px 5px rgb(192, 189, 189);
+  }
+  50% {
+    width: 100%;
+    height: 100%;
+    border-left-color: whitesmoke;
+    border-top-color: whitesmoke;
+    border-right-color: whitesmoke;
+    border-bottom-color: whitesmoke;
+    box-shadow: 4px 4px 5px rgb(192, 189, 189);
+  }
+  75% {
+    padding: 4px;
+    content: "Hello! I am Prashant Chandel";
+    font-size: small;
+    font-weight: 100;
+    width: 100%;
+    height: 100%;
+    border-left-color: whitesmoke;
+    border-top-color: whitesmoke;
+    border-right-color: whitesmoke;
+    border-bottom-color: whitesmoke;
+    box-shadow: 4px 4px rgb(182, 175, 175);
+    box-shadow: 4px 4px 5px rgb(192, 189, 189);
+  }
+  85% {
+    padding: 4px;
+    padding: 4px;
+    content: "Hello! I am Prashant Chandel";
+    font-weight: 300;
+    font-size: medium;
+    width: 100%;
+    height: 100%;
+    border-left-color: whitesmoke;
+    border-top-color: whitesmoke;
+    border-right-color: whitesmoke;
+    border-bottom-color: whitesmoke;
+    color: whitesmoke;
+    box-shadow: 4px 4px 5px rgb(192, 189, 189);
+    text-shadow: 2px 2px 2px rgb(182, 189, 209);
+  }
+  100% {
+    padding: 4px;
+    content: "Hello! I am Prashant Chandel";
+    font-weight: 500;
+    font-size: x-large;
+    width: 100%;
+    height: 100%;
+    border-left-color: whitesmoke;
+    border-top-color: whitesmoke;
+    border-right-color: whitesmoke;
+    border-bottom-color: whitesmoke;
+    color: whitesmoke;
+    box-shadow: 4px 4px 5px rgb(192, 189, 189);
+  }
+}
+
+/* brief start from here  */
+
+.brief{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.top-brief{
+    border: 2px solid transparent;
+    font-size: larger;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: transparent;
+    animation: top-b 2s linear 4s 1 normal forwards;
+    color: black;
+}
+
+@keyframes top-b {
+    0% {background-color: transparent;}
+    100% {background-color:gray; border-color: whitesmoke; color:whitesmoke;}
+
+}
+.bottom-brief{
+    position: relative;
+    margin-top:20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 40vh;
+}
+.left-brief, .right-brief{
+    padding: 4px;
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+    border: 2px solid whitesmoke;
+    box-sizing: border-box;
+    background-color: gray;
+    color:whitesmoke;
+}
+.left-brief{
+    top:0;
+    left:-50%;
+    position: absolute;
+    animation: bot-l 1s linear 4s 1 normal forwards;
+}
+.right-brief{
+    top:0;
+    right:-50%;
+    position: absolute;
+    animation: bot-r 1s linear 4s 1 normal forwards;
+}
+.list-item{
+    margin:10px 0 0 15px;
+}
+@keyframes bot-l {
+    0%{left:-50%}
+    80%{left:20%}
+    100%{left: 3%}
+}
+@keyframes bot-r {
+    0%{right:-50%}
+    80%{right:10%}
+    100%{right: 3%}
+}
